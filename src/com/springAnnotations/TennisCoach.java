@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 public class TennisCoach implements Coach {
 
 	@Autowired // Field injection
-	@Qualifier("happyFortuneService")
+	@Qualifier("randomFortuneService")
 	public FortuneService fortuneService;
 
 	// Define a constructor for constructor injection
