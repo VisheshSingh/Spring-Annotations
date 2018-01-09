@@ -9,10 +9,21 @@ public class TennisCoach implements Coach {
 
 	public FortuneService fortuneService;
 
-	// Define a constructor
+	// Define a constructor for constructor injection
+	// @Autowired
+	// public TennisCoach(FortuneService theFortuneService) {
+	// fortuneService = theFortuneService;
+	// }
+
+	// default constructor just for tracing
+	public TennisCoach() {
+		System.out.println(">> TennisCoach: inside the constructor");
+	}
+
 	@Autowired
-	public TennisCoach(FortuneService theFortuneService) {
-		fortuneService = theFortuneService;
+	public void setFortuneService(FortuneService fortuneService) {
+		System.out.println(">> TennisCoach: this is inside the setter method!");
+		this.fortuneService = fortuneService;
 	}
 
 	@Override
