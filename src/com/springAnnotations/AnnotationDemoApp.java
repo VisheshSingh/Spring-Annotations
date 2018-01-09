@@ -10,10 +10,13 @@ public class AnnotationDemoApp {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
 		// Retrieve the bean from the Spring config file
-		Coach theCoach = context.getBean("mrJordanTheGreat", Coach.class);
+		Coach theCoach = context.getBean("tennisCoach", Coach.class);
 
 		// call the methods of the bean (class/interface)
 		System.out.println(theCoach.getDailyWorkout());
+
+		// call the new methods of bean
+		System.out.println(theCoach.getDailyFortune());
 
 		// close the context
 		context.close();
