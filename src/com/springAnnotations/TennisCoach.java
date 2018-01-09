@@ -1,6 +1,7 @@
 package com.springAnnotations;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 //@Component("thatSillyCoach") - Explicit Bean id
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Component;
 public class TennisCoach implements Coach {
 
 	@Autowired // Field injection
+	@Qualifier("happyFortuneService")
 	public FortuneService fortuneService;
 
 	// Define a constructor for constructor injection
