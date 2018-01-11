@@ -1,13 +1,14 @@
 package com.springAnnotations;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 //@Component("thatSillyCoach") - Explicit Bean id
 @Component // Default Bean id
-@Scope("prototype")
 public class TennisCoach implements Coach {
 
 	@Autowired // Field injection
@@ -23,6 +24,17 @@ public class TennisCoach implements Coach {
 	// default constructor just for tracing
 	public TennisCoach() {
 		System.out.println(">> TennisCoach: inside the constructor");
+	}
+
+	// Define init and destroy methods
+	@PostConstruct
+	public void doMyStartupStuff() {
+		System.out.println(">> TennisCoach: This is init method");
+	}
+
+	@PreDestroy
+	public void doMyCleanupStuff() {
+		System.out.println(">> TennisCoach: This is destroy method");
 	}
 
 	// @Autowired // Setter injection
