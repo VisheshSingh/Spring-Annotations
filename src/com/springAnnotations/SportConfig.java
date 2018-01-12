@@ -2,9 +2,11 @@ package com.springAnnotations;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 @Configuration
 // @ComponentScan("com.springAnnotations")
+@PropertySource("classpath:sport.properties") // Load Properties from Spring file
 public class SportConfig {
 
 	// define bean for sadFortuneService
